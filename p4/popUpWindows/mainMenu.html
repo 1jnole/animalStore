@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="AnimalShopPopUp" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+
+	<!--General-->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" HREF="images/logo.jpeg"/>
+	<title>Animal Shop</title>
+	<meta name="description" content="Test module MF6">
+	<meta name="author" content="Animal Shop">
+		
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="../css/frameworks/bootstrap.min.css">
+	<link href="../css/index.css" rel="stylesheet" type="text/css"/>
+		
+	<!--Frameworks-->
+		<!--jQuery-->
+		<script src="../js/frameworks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="../js/frameworks/jQuery/jquery-ui.min.js" type="text/javascript" xml:space="preserve"></script>
+
+		<!--Angular-->
+		<script src="../js/frameworks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+	    <script src="../js/frameworks/angular/angular-animate.js"></script>
+	    <script src="../js/frameworks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="../js/frameworks/angular/i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="../js/frameWorks/angular/cookies/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+
+	    <!--Bootstrap js-->
+	    <script src="../js/frameworks/Bootstrap/ui-bootstrap-0.14.3.min.js"></script>
+	    <script src="../js/frameworks/Bootstrap/bootstrap.min.js" type="text/javascript" xml:space="preserve"></script>
+
+	    <!--Own code-->
+			<!--Model-->
+			<script type="text/javascript" src="../js/model/animalObj.js"></script>
+			<script type="text/javascript" src="../js/model/AnimalTypeObj.js"></script>
+			<script type="text/javascript" src="../js/model/providerObj.js"></script>
+			<script type="text/javascript" src="../js/model/userObj.js"></script>
+
+			<!--Control-->
+		    <script src="../js/control/mainMenu.js"></script>
+</head>
+<body ng-controller="AnimalShopPopUpController as AnimalShopPopUpCtrl" ng-init="AnimalShopPopUpCtrl.loadMainData()">
+
+<!-- MENU DROPDOWN -->
+		
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Animal Store</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+					<!-- MY PROFILE-->
+					<li ng-show="role==1 || role==3"><a href="#" ng-click='myProfile=1;actionProducts="none"'>My profile</a></li>
+					<!-- PRODUCTS MANAGEMENT -->
+					<li class="dropdown" ng-show="role==1">
+					  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+					  	<ul class="dropdown-menu">
+						    <li><a href="#" ng-click='myProfile=0;actionProducts="add1"'>Add</a></li>
+						    <li><a href="#" ng-click='myProfile=0;actionProducts="mod1"'>Modify & Delete</a></li>  
+					  	</ul>
+					</li>
+					<!-- USER MANAGEMENT AND "MONEDERO" -->
+					<li class="dropdown" ng-show="role==1">
+					  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
+					  	<ul class="dropdown-menu">
+						    <li><a href="#" >Add</a></li>
+						    <li><a href="#" >Modify & Delete</a></li>  
+					  	</ul>
+					</li>
+					<!-- ORDER MANAGEMENT (comanda) -->
+					<li class="dropdown" ng-show="role==1">
+					  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orders <span class="caret"></span></a>
+					  	<ul class="dropdown-menu">
+						    <li><a href="#" >Add</a></li>
+						    <li><a href="#" >Modify & Delete</a></li>  
+					  	</ul>
+					</li>
+					
+					<!-- CHECK MY TURNS -->
+					<li ng-show="role==1 || role==3"><a href="#" >Check my turns</a></li>
+					<!-- CHECK MY MONEDERO -->
+					<li ng-show="role==1 || role==3"><a href="#" >Check my bag</a></li>
+				</ul>
+				<p class="navbar-text navbar-right">Welcome: <a href="#" class="navbar-link h4"> {{nick}}</a></p>
+				
+		    </div><!-- /.navbar-collapse -->
+		 
+	  	</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<shopping-cart></shopping-cart>
+	</div>
+</body>
+</html>

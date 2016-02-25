@@ -1,0 +1,48 @@
+<div ng-show="searchAddProd==1">
+	
+	<div class="row text-right">
+		<div class="col-xs-12">
+			<div ><button type="submit" class="btn btn-default" ng-click="FGCShopCtrl.showShoppingCart('finishBuy')">Finish and pay</button></div>
+		</div>
+	</div>
+	
+	<div> <h3>Select the products that you want to buy</h3></div>
+	<br><br>
+	<div class="row">
+		<form role="form">
+			<table class="table table-hover">
+				<tr>
+					<th>Name</th>
+					<th>Provider</th>
+					<th>Unit price</th>
+					<th>Zones</th>
+					<th>Quantity</th>
+					<th>Buy</th>
+				</tr>
+				<tr ng-repeat="products in FGCShopCtrl.productArray">
+					<td>		
+						<div>{{products.name}}</div>
+					</td>
+					<td>
+						<div>{{products.idProvider}}</div>		
+					</td>
+					<td>
+						<div>{{products.unitPrice | currency}}</div>	
+					</td>
+					<td>
+						<div>{{products.zones}}</div>
+					</td>
+					<td>
+						<div>{{products.quantity}}</div>		
+					</td>
+					<td>
+						<input type="checkbox" id="productToBuy{{$index}}" name="productToBuy" class="custom-checkbox" data-toggle="checkbox" value="{{$index}}">
+					</td>
+				</tr>	
+			</table>
+			<br><br>
+			<br/><input type="button" class="btn btn-success" value="Add to cart" ng-click="FGCShopCtrl.addProductsToShopingCart()"/>
+			<input type="button" class="btn btn-primary" value="Back" ng-click="searchAddProd=0"/>
+		</form>
+	</div>	
+</div>

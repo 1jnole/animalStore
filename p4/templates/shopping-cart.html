@@ -1,0 +1,58 @@
+<div >
+	<center>
+	<div ng-show="finishNdPay==0"><h3>Your Shopping cart</h3></div>
+	<div ng-show="finishNdPay==1"><h3>Invoice</h3></div>
+	</center>
+	<br><br>
+	<div class="row">
+		<table class="table table-hover">
+			<tr>
+				<th>Name</th>
+				<th>Provider</th>
+				<th>Unit price</th>
+				<th>Zones</th>
+				<th>Quantity</th>
+				<th ng-show="finishNdPay==0">Delete Row</th>
+			</tr>
+			<tr ng-repeat="products in productsArray">
+				<td>
+					<div>{{products.name}}</div>		
+				</td>
+				<td>
+					<div>{{products.idProvider}}</div>
+				</td>
+				<td>
+					<div>{{products.unitPrice | currency}}</div>
+				</td>
+				<td>
+					<div>{{products.zones}}
+				</td>
+				<td>
+					<div>{{products.quantity}}</div>						
+				</td>
+				<td ng-show="finishNdPay==0">
+					<div class="form-group">
+						<input type="button" class="btn btn-danger" value="X" ng-click="FGCShopCartCtrl.removeProduct($index)"/>
+					</div>
+				</td>
+			</tr>	
+		</table>
+		Total price: {{totalPrice | currency}}
+		<br><br>
+		<div class="col-xs-2">
+			<div ng-show="finishNdPay==0"><input type="button" class="btn btn-primary" value="Undo" ng-click="FGCShopCartCtrl.unDo()"/></div>
+		</div>
+		<div class="col-xs-2" ng-show="finishNdPay==0">	
+			<button class="btn btn-block btn-lg btn-inverse" onclick="window.close()">Close Windows</button>
+		</div>
+	</div>
+	
+	<div class="row center" ng-if="finishNdPay==1">
+		<div class="col-xs-2">
+			<button class="btn btn-block btn-lg btn-inverse" onclick="window.close()">Close Windows</button>
+		</div>
+		<div class="col-xs-2 ">
+			<button class="btn btn-block btn-lg btn-warning" onclick="print()">Print</button>
+		</div>
+	</div>
+</div>

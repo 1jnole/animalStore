@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="animalShopApp" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+
+	<!--General-->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" HREF="images/logo.jpeg"/>
+	<title>Computer Shop</title>
+	<meta name="description" content="Test module MF6">
+	<meta name="author" content="Jordi Delriu Computer Shop">
+		
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/frameworks/bootstrap.min.css">
+	<link href="css/index.css" rel="stylesheet" type="text/css"/>
+		
+	<!--Frameworks-->
+		<!--jQuery-->
+		<script src="js/frameworks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+		<!--<script src="js/frameworks/jQuery/jquery-ui.min.js" type="text/javascript" xml:space="preserve"></script>-->
+
+		<!--Bootstrap-->	
+		<script src="js/frameworks/Bootstrap/bootstrap.min.js" type="text/javascript" xml:space="preserve"></script>
+		
+		<!--Angular-->
+		<script src="js/frameworks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="js/frameworks/angular/i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="js/frameworks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="js/frameWorks/angular/cookies/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+	
+	<!--Own code-->
+		<!--Model-->
+		<script type="text/javascript" src="js/model/animalObj.js"></script>
+		<script type="text/javascript" src="js/model/userObj.js"></script>
+		<script type="text/javascript" src="js/model/providerObj.js"></script>
+		<script type="text/javascript" src="js/model/AnimalTypeObj.js"></script>
+
+
+		<!--Control-->
+		<script src="js/control/generalFunctions.js" type="text/javascript" xml:space="preserve"></script>
+		<script type="text/javascript" src="js/control/index.js"></script>		
+</head>
+<body ng-controller="AnimalShopController as AnimalShopCtrl">
+	<div class="backgroundImageLogin" ng-init="AnimalShopCtrl.loadMainData()" >
+	<!--<img src="images/montseny_degr.jpg" class="img-unfocused">-->
+		<div class="container">
+			<div class="white-text">
+				<h2>Login</h2>
+				<form role="form">
+					<div class="form-group">
+						<label for="username">User:</label>
+						<input type="text" class="form-control" id="username" ng-model="user.nick" placeholder="Enter username">
+					</div>
+					<div class="form-group">
+					    <label for="pwd">Password:</label>
+					    <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Enter password" >
+					</div>
+					<button type="submit" class="btn btn-default" ng-click="AnimalShopCtrl.searchValidUser()">Submit</button>
+				</form>
+
+
+
+
+		<!--	<div class="row">
+				<div id="image" class="col-xs-12">
+					<center><img class="img-responsive" src="images/logo.png"  id="logo" alt=""></center>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2 row-padded">
+					<div id="mainMenu" ng-init="compShopCtrl.loadMainData()">
+				
+						<computer-type-form></computer-type-form>
+
+					</div>
+					<div id="management" ng-if="compShopCtrl.productsArray.length > 0">	
+
+						<computer-form></computer-form>
+
+					</div>
+				</div>
+			</div>-->
+			</div>
+		</div>
+	</div>
+	
+
+
+</body>
+</html>

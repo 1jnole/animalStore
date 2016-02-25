@@ -1,0 +1,115 @@
+.ng-invalid.ng-dirty
+{
+  border-color:red
+}
+
+.ng-valid.ng-dirty
+{
+  border-color:green
+}
+
+.form-control-error{
+	border: 2px solid red;
+
+    border-radius: 6px;
+    box-shadow: none;
+    color: red;
+    /*font-family: Lato,Helvetica,Arial,sans-serif;*/
+    font-size: 15px;
+    height: 42px;
+    width:100%;
+    line-height: 1.467;
+    padding: 8px 12px;
+    transition: border 0.25s linear 0s, color 0.25s linear 0s, background-color 0.25s linear 0s;
+}
+
+.row-padded {
+    padding: 35px;
+    background-color: #E6E6E6;
+    border: 1px solid #DDD;
+}
+
+
+body {
+    font-family: 'Avenir LT Std 65 Medium' !important;
+}
+
+@font-face {
+    font-family: 'Avenir LT Std 65 Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirLTStd-Medium.woff') format('woff');
+}
+
+body .backgroundImageLogin{
+    /* Height of each computer screen */
+    min-height:100vh;
+    /* Location of the image */
+    background-image: url(../images/montseny_degr.jpg);
+
+    /* Image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Image doesn't repeat */
+    background-repeat: no-repeat;
+
+    /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based on its container's size */
+    background-size: cover;
+
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    background-color:#464646;
+}
+
+
+
+
+.form-control:focus{
+    border-color-left: white;
+    border-color-right: white;
+    border-color-top: white;
+    border-width: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+
+.form-control{
+    font-weight: bold !important;
+    border-left: none ;
+    border-right: none ;
+    border-top: none ;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0 !important;
+
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(54, 25, 25, .0);
+    color:#1C1C1C;/*TEXT COLOR*/
+
+
+}
+
+.btn{
+    border-radius: 0 !important;
+}
+
+.img-unfocused{                     
+ width: auto;
+ height: auto;   
+z-index: -1;
+}
+
+.white-text{
+    margin:20%;
+   margin-top: 20%;
+    color:white;
+   
+}
+
+/* To run Bootstrap-ui with Angular https://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
