@@ -102,8 +102,14 @@ $(document).ready(function () {
 			//if all data is correct, go to the new window
 			if(!flagError)
 			{
-				window.open("popUpWindows/mainMenu.html?rol="+$scope.user.getTypeUser()+"&nick="+$scope.user.getNick(),"_self"); 
-				//When you specify a width/height, it will open it in a new window instead of a tab.
+				if($scope.user.getTypeUser() == 1)
+				{
+					window.open("popUpWindows/adminMenu.html?nick="+$scope.user.getNick(),"_self"); 
+				}
+				if($scope.user.getTypeUser() == 2)
+				{
+					window.open("popUpWindows/clientMenu.html?nick="+$scope.user.getNick(),"_self"); 
+				}
 			}
 		}
 	});//end controller		
