@@ -31,7 +31,7 @@ $(document).ready(function () {
 		//cookies
 		$scope.productsArray = [];
 		$scope.productArrayAux = [];
-		$scope.generalName = "FGCShop";
+
 		$scope.path = "/";
 		$scope.totalPrice = 0;
 
