@@ -5,7 +5,7 @@
  * @Attributes:
 
 */
-function animalObj (){
+ this.animalObj = function() {
 	//Attributes declaration
 	this.idAnimal;
 	this.idUser;
@@ -56,36 +56,36 @@ function animalObj (){
 
 
 
-	this.arrayToString = function (arrayAnimalObj){
-		var animalString ="";
-		$.each(arrayCookieObj, function (index, animal){
-			animalString+="Animal number "+(index+1)+":"+animal.toString()+"\n";
-		});
-		return animalString;
+		this.arrayToString = function (arrayAnimalObj){
+			var animalString ="";
+			$.each(arrayCookieObj, function (index, animal){
+				animalString+="Animal number "+(index+1)+":"+animal.toString()+"\n";
+			});
+			return animalString;
 
-	}
+		}
 
-	this.toCookie = function (){
-		var animalString ="Animal Name="+this.getName()+":Animal Weigth="+this.getWeigth()+":Animal Height="+this.getHeight()+":Animal Description="+this.getAnimalDescription()+":AnimalAge="+this.getAge()+":AnimalPrice="+this.getPrice();
-		return animalString;
-	}
+		this.toCookie = function (){
+			var animalString ="Animal Name="+this.getName()+":Animal Weigth="+this.getWeigth()+":Animal Height="+this.getHeight()+":Animal Description="+this.getAnimalDescription()+":AnimalAge="+this.getAge()+":AnimalPrice="+this.getPrice();
+			return animalString;
+		}
 
-	this.toString = function (){
-		var animalString ="Animal Name="+this.getName()+":Animal Weigth="+this.getWeigth()+":Animal Height="+this.getHeight()+":Animal Description="+this.getAnimalDescription()+":AnimalAge="+this.getAge()+":AnimalPrice="+this.getPrice();
-		return animalString;
-	}
+		this.toString = function (){
+			var animalString ="Animal Name="+this.getName()+":Animal Weigth="+this.getWeigth()+":Animal Height="+this.getHeight()+":Animal Description="+this.getAnimalDescription()+":AnimalAge="+this.getAge()+":AnimalPrice="+this.getPrice();
+			return animalString;
+		}
 
-	this.cookieToObj = function (animalString){
-		var productsArray = animalString.split(":");
-		this.construct (
-		productsArray[0].split("=")[2].split(" ")[0],
-		productsArray[0].split("=")[3].split(" ")[0],
-		productsArray[0].split("=")[4].split(" ")[0],
-		productsArray[0].split("=")[5].split(" ")[0],
-		productsArray[0].split("=")[6].split(" ")[0],
-		productsArray[0].split("=")[7].split(" ")[0],
-		productsArray[0].split("=")[8].split(" ")[0])
-	}
+		this.cookieToObj = function (animalString){
+			var productsArray = animalString.split(":");
+			this.construct (
+			productsArray[0].split("=")[2].split(" ")[0],
+			productsArray[0].split("=")[3].split(" ")[0],
+			productsArray[0].split("=")[4].split(" ")[0],
+			productsArray[0].split("=")[5].split(" ")[0],
+			productsArray[0].split("=")[6].split(" ")[0],
+			productsArray[0].split("=")[7].split(" ")[0],
+			productsArray[0].split("=")[8].split(" ")[0])
+		}
 
 
 
