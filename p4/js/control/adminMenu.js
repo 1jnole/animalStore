@@ -21,24 +21,69 @@ $(document).ready(function () {
 (function () {
 	var AnimalShopAdmin = angular.module("AnimalShopAdmin", ['ng-currency']);
 	
-	AnimalShopPopUp.controller("AnimalShopAdminController", function ($scope, $cookies) {
+	AnimalShopAdmin.controller("AnimalShopAdminController", function ($scope) {
 
 
 		//************** Properties **************//
  
 
 		//*********** Scope variables ***********//
-		//cookies
-		$scope.productsArray = [];
-		$scope.productArrayAux = [];
+		$scope.animalType = new animalTypeObj();
+		$scope.animal = new animalObj();
 
-		$scope.path = "/";
-		$scope.totalPrice = 0;
+		$scope.providerArray = new Array();
+		$scope.animalTypeArray = new Array();
+$scope.animalType;
+		$scope.searchAnimal=0;
 
-
+		//******************** Methods ********************//
+		/* @name: loadMainData()
+		 * @author: Jordi Delriu
+		 * @version: 1.0
+		 * @description: - This method is executed by "ng-init" when div is created.  
+		 				 - We load the product types that will be needed in some templates.
+		 				 - The user data is also loaded, but in this case isn't used.
+		 * @date: 2016/02/27
+		 * @params: none
+		 * @return: none
+		*/
 		this.loadMainData = function (){
+			//Access to the server to get all ANIMAL TYPES
+			//animalTypeObj --> id, name.
+			var animalType = new animalTypeObj();
+			animalType.construct(1,"Fruits",4,4);
+			$scope.animalTypeArray.push(animalType);
+			
+			var animalType = new animalTypeObj();
+			animalType.construct(2,"Vegetables",5,5);
+			$scope.animalTypeArray.push(animalType);
+			
+			var animalType = new animalTypeObj();
+			animalType.construct(3,"Cold Drinks",6,6);
+			$scope.animalTypeArray.push(animalType);
 
-		
+			var animalType = new animalTypeObj(); 
+			animalType.construct(4,"Tea",7,7);
+			$scope.animalTypeArray.push(animalType);
+
+			$scope.animalType = $scope.animalTypeArray[0];//to define a default value to select
+console.log($scope.animalTypeArray);
+			//Access to the server to get all PROVIDERS
+			//provider --> id, name.
+			/*var provider = new providerObj();
+			provider.construct(1,"Tony's Farm");
+			$scope.providerArray.push(provider);
+
+			var provider = new providerObj();
+			provider.construct(2,"Green Vegetables");
+			$scope.providerArray.push(provider);
+
+			var provider = new providerObj();
+			provider.construct(3,"Fruits & Livestyle S.L.");
+			$scope.providerArray.push(provider);
+
+			$scope.provider = $scope.providerArray[0];//to define a default value to select
+			*/
 
 		}
 
@@ -53,16 +98,17 @@ $(document).ready(function () {
 	    'C' - only matches class name
 
 	*/
-	AnimalShopPopUp.directive("shoppingCart", function (){
+	AnimalShopAdmin.directive("searchAnimalsForm", function (){
 		return {
-		  restrict: 'E',
-		  templateUrl:"../templates/shopping-cart.html",
-		  controller:function(){
-			
+			restrict: 'E',
+			templateUrl:"../templates/search-animals-form.html",
+			controller:function(){
 		  },
-		  controllerAs: 'shoppingCart'
+		  controllerAs: 'searchAnimalsForm'
 		};
 	});
+
+
 	
 })();
 
