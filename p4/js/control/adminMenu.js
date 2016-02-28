@@ -25,7 +25,7 @@ $(document).ready(function () {
 
 
 		//************** Properties **************//
- 
+        
 
 		//*********** Scope variables ***********//
 		$scope.animalType = new animalTypeObj();
