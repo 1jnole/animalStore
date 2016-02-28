@@ -28,7 +28,7 @@ $(document).ready(function () {
 		
 		//************** Properties **************//
 		$scope.animal = new animalObj();
-		$scope.animalType = new AnimalTypeObj();
+		$scope.animalType = new animalTypeObj();
 		$scope.provider = new providerObj();
 		$scope.user = new userObj();
 
